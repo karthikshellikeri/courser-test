@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+
+
+    <div class="row">
+        <section class="col-md-8" aria-labelledby="employeeDetailsTitle">
+            <h2 id="employeeDetailsTitle">Employee Details</h2>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Project ID</th>
+                            <th>Job Code</th>
+                            <th>Facility ID</th>
+                            <th>Employee Name</th>
+                            <th>Gender</th>
+                            <th>DOB</th>
+                            <th>DOJ</th>
+                            <th>Employee ID</th>
+                            <th>Is Active</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var employee in Model)
+                        {
+                            <tr>
+                                <td>@employee.ProjectID</td>
+                                <td>@employee.JobCode</td>
+                                <td>@employee.FacilityID</td>
+                                <td>@employee.EmpName</td>
+                                <td>@employee.Gender</td>
+                                <td>@employee.DOB.ToString("yyyy-MM-dd")</td>
+                                <td>@employee.DOJ.ToString("yyyy-MM-dd")</td>
+                                <td>@employee.EmpID</td>
+                                <td>@(employee.IsActive ? "Yes" : "No")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+    </div>
+</main>
